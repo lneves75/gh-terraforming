@@ -11,6 +11,10 @@ import (
 )
 
 const repositoryTemplate = `
+{{- if hasLeadingDigit .Repository.Name}}
+# WARNING this resource has an invalid identifier when used with Terraform 0.12+
+# Suggestion: use this identifier instead _{{normalizeResourceName .Repository.Name}}
+{{- end}}
 # terraform import github_repository.{{normalizeResourceName .Repository.Name}} {{normalizeResourceName .Repository.Name}}
 resource "github_repository" "{{normalizeResourceName .Repository.Name}}" {
   name = "{{.Repository.Name}}"

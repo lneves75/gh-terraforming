@@ -11,6 +11,10 @@ import (
 )
 
 const teamTemplate = `
+{{- if hasLeadingDigit .Team.Name}}
+# WARNING this resource has an invalid identifier when used with Terraform 0.12+
+# Suggestion: use this identifier instead _{{normalizeResourceName .Team.Name}}
+{{- end}}
 # terraform import github_team.{{normalizeResourceName .Team.Name}} {{.Team.ID}}
 resource "github_team" "{{normalizeResourceName .Team.Name}}" {
   name = "{{.Team.Name}}"

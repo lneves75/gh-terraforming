@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"reflect"
 	"sort"
+	"strconv"
 	"strings"
 	"text/template"
 
@@ -51,6 +52,11 @@ func normalizeResourceName(name string) string {
 	return r.Replace(name)
 }
 
+func hasLeadingDigit(identifier string) bool {
+	_, err := strconv.ParseFloat(identifier[:1], 64)
+	return err == nil
+}
+
 var templateFuncMap = template.FuncMap{
 	"replace":               replace,
 	"isMap":                 isMap,
@@ -58,6 +64,7 @@ var templateFuncMap = template.FuncMap{
 	"quoteIfString":         quoteIfString,
 	"trim":                  strings.TrimSpace,
 	"normalizeResourceName": normalizeResourceName,
+	"hasLeadingDigit":       hasLeadingDigit,
 }
 
 func hashMap(values map[string]string) int {

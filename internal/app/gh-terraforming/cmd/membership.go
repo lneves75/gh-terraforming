@@ -11,6 +11,10 @@ import (
 )
 
 const membershipTemplate = `
+{{- if hasLeadingDigit .Username}}
+# WARNING this resource has an invalid identifier when used with Terraform 0.12+
+# Suggestion: use this identifier instead _{{normalizeResourceName .Username}}
+{{- end}}
 # terraform import github_membership.{{normalizeResourceName .Username}} {{.Org}}:{{normalizeResourceName .Username}}
 resource "github_membership" "{{normalizeResourceName .Username}}" {
   username = "{{.Username}}"
