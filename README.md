@@ -124,7 +124,7 @@ The following resources can be downloaded into [Terraform HCL format](https://ww
 | [repository_file](https://registry.terraform.io/providers/hashicorp/github/latest/docs/resources/repository_file) | ✖️ |
 | [repository_project](https://registry.terraform.io/providers/hashicorp/github/latest/docs/resources/repository_project) | ✖️ |
 | [repository_webhook](https://registry.terraform.io/providers/hashicorp/github/latest/docs/resources/repository_webhook) | ✖️ |
-| [team](https://registry.terraform.io/providers/hashicorp/github/latest/docs/resources/team) | ✖️ |
+| [team](https://registry.terraform.io/providers/hashicorp/github/latest/docs/resources/team) | ✔️ |
 | [team_membership](https://registry.terraform.io/providers/hashicorp/github/latest/docs/resources/team_membership) | ✖️ |
 | [team_repository](https://registry.terraform.io/providers/hashicorp/github/latest/docs/resources/team_repository) | ✖️ |
 | [team_sync_group_mapping](https://registry.terraform.io/providers/hashicorp/github/latest/docs/resources/team_sync_group_mapping) | ✖️ |
