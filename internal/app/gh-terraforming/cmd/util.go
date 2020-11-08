@@ -52,12 +52,12 @@ func normalizeResourceName(name string) string {
 }
 
 var templateFuncMap = template.FuncMap{
-	"replace":                replace,
-	"isMap":                  isMap,
-	"isSlice":                isSlice,
-	"quoteIfString":          quoteIfString,
-	"trim":                   strings.TrimSpace,
-	"repositoryResourceName": repositoryResourceName,
+	"replace":               replace,
+	"isMap":                 isMap,
+	"isSlice":               isSlice,
+	"quoteIfString":         quoteIfString,
+	"trim":                  strings.TrimSpace,
+	"normalizeResourceName": normalizeResourceName,
 }
 
 func hashMap(values map[string]string) int {

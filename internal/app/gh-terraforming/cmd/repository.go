@@ -11,8 +11,8 @@ import (
 )
 
 const repositoryTemplate = `
-# terraform import github_repository.{{repositoryResourceName .Repository.Name}} {{repositoryResourceName .Repository.Name}}
-resource "github_repository" "{{repositoryResourceName .Repository.Name}}" {
+# terraform import github_repository.{{normalizeResourceName .Repository.Name}} {{normalizeResourceName .Repository.Name}}
+resource "github_repository" "{{normalizeResourceName .Repository.Name}}" {
   name = "{{.Repository.Name}}"
   {{if .Repository.Description}}description = "{{.Repository.Description}}" 
   {{end -}}
@@ -120,8 +120,4 @@ func repositoryParse(repo *github.Repository, output *os.File) {
 	if err != nil {
 		log.Error(err)
 	}
-}
-
-func repositoryResourceName(repoName string) string {
-	return normalizeResourceName(repoName)
 }

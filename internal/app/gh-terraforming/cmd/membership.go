@@ -11,8 +11,8 @@ import (
 )
 
 const membershipTemplate = `
-# terraform import github_membership.{{membershipResourceName .Username}} {{.Org}}:{{membershipResourceName .Username}}
-resource "github_membership" "{{membershipResourceName .Username}}" {
+# terraform import github_membership.{{normalizeResourceName .Username}} {{.Org}}:{{normalizeResourceName .Username}}
+resource "github_membership" "{{normalizeResourceName .Username}}" {
   username = "{{.Username}}"
   role     = "{{.Role}}"
 }
@@ -96,8 +96,4 @@ func membershipParse(user *github.User, output *os.File) {
 	if err != nil {
 		log.Error(err)
 	}
-}
-
-func membershipResourceName(userName string) string {
-	return normalizeResourceName(userName)
 }
