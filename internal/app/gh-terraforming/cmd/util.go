@@ -47,7 +47,7 @@ func quoteIfString(i interface{}) interface{} {
 }
 
 func normalizeResourceName(name string) string {
-	r := strings.NewReplacer(".", "_", "*", "star")
+	r := strings.NewReplacer(".", "_", "*", "star", " ", "_")
 
 	return r.Replace(name)
 }
