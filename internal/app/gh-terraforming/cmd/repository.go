@@ -18,39 +18,39 @@ const repositoryTemplate = `
 # terraform import github_repository.{{normalizeResourceName .Repository.Name}} {{normalizeResourceName .Repository.Name}}
 resource "github_repository" "{{normalizeResourceName .Repository.Name}}" {
   name = "{{.Repository.Name}}"
-  {{if .Repository.Description}}description = "{{.Repository.Description}}" 
+  {{if .Repository.Description}}description = "{{.Repository.Description}}"
   {{end -}}
-  {{if .Repository.Homepage}}homepage_url = "{{.Repository.Homepage}}" 
+  {{if .Repository.Homepage}}homepage_url = "{{.Repository.Homepage}}"
   {{end -}}
-  {{ if not .Repository.Visibility }}private = {{.Repository.Private}} {{else -}}visibility = {{.Repository.Visibility}} 
+  {{ if not .Repository.Visibility }}private = {{.Repository.Private}} {{else -}}visibility = {{.Repository.Visibility}}
   {{end}}
-  {{if .Repository.HasDownloads }}has_downloads = {{.Repository.HasDownloads}} 
+  {{if .Repository.HasDownloads }}has_downloads = {{.Repository.HasDownloads}}
   {{end -}}
-  {{ if .Repository.HasIssues }}has_issues = {{.Repository.HasIssues}} 
+  {{ if .Repository.HasIssues }}has_issues = {{.Repository.HasIssues}}
   {{end -}}
-  {{ if .Repository.HasProjects }}has_projects = {{.Repository.HasProjects}} 
+  {{ if .Repository.HasProjects }}has_projects = {{.Repository.HasProjects}}
   {{end -}}
-  {{ if .Repository.HasWiki }}has_wiki = {{.Repository.HasWiki}} 
+  {{ if .Repository.HasWiki }}has_wiki = {{.Repository.HasWiki}}
   {{end -}}
-  {{ if .Repository.IsTemplate }}is_template = {{.Repository.IsTemplate}} 
+  {{ if .Repository.IsTemplate }}is_template = {{.Repository.IsTemplate}}
   {{end -}}
-  {{ if .Repository.AllowMergeCommit }}allow_merge_commit = {{.Repository.AllowMergeCommit}} 
+  {{ if .Repository.AllowMergeCommit }}allow_merge_commit = {{.Repository.AllowMergeCommit}}
   {{end -}}
-  {{ if .Repository.AllowSquashMerge }}allow_squash_merge = {{.Repository.AllowSquashMerge}} 
+  {{ if .Repository.AllowSquashMerge }}allow_squash_merge = {{.Repository.AllowSquashMerge}}
   {{end -}}
-  {{ if .Repository.AllowRebaseMerge }}allow_rebase_merge = {{.Repository.AllowRebaseMerge}} 
+  {{ if .Repository.AllowRebaseMerge }}allow_rebase_merge = {{.Repository.AllowRebaseMerge}}
   {{end -}}
-  {{ if .Repository.DeleteBranchOnMerge }}delete_branch_on_merge = {{.Repository.DeleteBranchOnMerge}} 
+  {{ if .Repository.DeleteBranchOnMerge }}delete_branch_on_merge = {{.Repository.DeleteBranchOnMerge}}
   {{end -}}
-  {{ if .Repository.AutoInit }}auto_init = {{.Repository.AutoInit}} 
+  {{ if .Repository.AutoInit }}auto_init = {{.Repository.AutoInit}}
   {{end -}}
-  {{ if .Repository.LicenseTemplate }}license_template = "{{.Repository.LicenseTemplate}}" 
+  {{ if .Repository.LicenseTemplate }}license_template = "{{.Repository.LicenseTemplate}}"
   {{end -}}
-  {{ if .Repository.GitignoreTemplate }}gitignore_template = "{{.Repository.GitignoreTemplate}}" 
+  {{ if .Repository.GitignoreTemplate }}gitignore_template = "{{.Repository.GitignoreTemplate}}"
   {{end -}}
-  {{ if not .Repository.Archived }}archived = {{.Repository.Archived}} 
+  {{ if not .Repository.Archived }}archived = {{.Repository.Archived}}
   {{end -}}
-  {{ if .Repository.Topics }}topics = [ {{range .Repository.Topics}}"{{.}}",{{end}} ]
+  {{ if .Repository.Topics }}topics = [ {{range $i, $topic := .Repository.Topics}}{{if $i}}, {{end}}"{{$topic}}"{{end}} ]
   {{end -}}
 }
 `
