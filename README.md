@@ -119,7 +119,7 @@ The following resources can be downloaded into [Terraform HCL format](https://ww
 | [branch_protection](https://registry.terraform.io/providers/hashicorp/github/latest/docs/resources/branch_protection) | ✖️ |
 | [issue_label](https://registry.terraform.io/providers/hashicorp/github/latest/docs/resources/issue_label) | ✖️ |
 | [membership](https://registry.terraform.io/providers/hashicorp/github/latest/docs/resources/membership) | ✔️ |
-| [organization_block](https://registry.terraform.io/providers/hashicorp/github/latest/docs/resources/organization_block) | ✖️ |
+| [organization_block](https://registry.terraform.io/providers/hashicorp/github/latest/docs/resources/organization_block) | ✔️ |
 | [organization_project](https://registry.terraform.io/providers/hashicorp/github/latest/docs/resources/organization_project) | ✖️ |
 | [organization_webhook](https://registry.terraform.io/providers/hashicorp/github/latest/docs/resources/organization_webhook) | ✖️ |
 | [project_column](https://registry.terraform.io/providers/hashicorp/github/latest/docs/resources/project_column) | ✖️ |
