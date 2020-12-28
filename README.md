@@ -107,10 +107,14 @@ $ go env | grep GOPATH
 
 The following resources can be downloaded into [Terraform HCL format](https://www.terraform.io/docs/configuration/syntax.html) right now. Support across the remaining commands will be added over time.
 
+✔️ - Supported
+✖️ - Not supported yet
+🚫 - Not possible to support
+
 | Resource | Generating HCL |
 |----------|----------------|
 | [repository](https://registry.terraform.io/providers/hashicorp/github/latest/docs/resources/repository) | ✔️ |
-| [actions_secret](https://registry.terraform.io/providers/hashicorp/github/latest/docs/resources/actions_secret) | ✖️ |
+| [actions_secret](https://registry.terraform.io/providers/hashicorp/github/latest/docs/resources/actions_secret) | 🚫 |
 | [branch](https://registry.terraform.io/providers/hashicorp/github/latest/docs/resources/branch) | ✖️ |
 | [branch_protection](https://registry.terraform.io/providers/hashicorp/github/latest/docs/resources/branch_protection) | ✖️ |
 | [issue_label](https://registry.terraform.io/providers/hashicorp/github/latest/docs/resources/issue_label) | ✖️ |
@@ -119,14 +123,14 @@ The following resources can be downloaded into [Terraform HCL format](https://ww
 | [organization_project](https://registry.terraform.io/providers/hashicorp/github/latest/docs/resources/organization_project) | ✖️ |
 | [organization_webhook](https://registry.terraform.io/providers/hashicorp/github/latest/docs/resources/organization_webhook) | ✖️ |
 | [project_column](https://registry.terraform.io/providers/hashicorp/github/latest/docs/resources/project_column) | ✖️ |
-| [repository_collaborator](https://registry.terraform.io/providers/hashicorp/github/latest/docs/resources/repository_collaborator) | ✖️ |
+| [repository_collaborator](https://registry.terraform.io/providers/hashicorp/github/latest/docs/resources/repository_collaborator) | ✔️ |
 | [repository_deploy_key](https://registry.terraform.io/providers/hashicorp/github/latest/docs/resources/repository_deploy_key) | ✖️ |
 | [repository_file](https://registry.terraform.io/providers/hashicorp/github/latest/docs/resources/repository_file) | ✖️ |
 | [repository_project](https://registry.terraform.io/providers/hashicorp/github/latest/docs/resources/repository_project) | ✖️ |
-| [repository_webhook](https://registry.terraform.io/providers/hashicorp/github/latest/docs/resources/repository_webhook) | ✖️ |
+| [repository_webhook](https://registry.terraform.io/providers/hashicorp/github/latest/docs/resources/repository_webhook) | ✔️ |
 | [team](https://registry.terraform.io/providers/hashicorp/github/latest/docs/resources/team) | ✔️ |
-| [team_membership](https://registry.terraform.io/providers/hashicorp/github/latest/docs/resources/team_membership) | ✖️ |
-| [team_repository](https://registry.terraform.io/providers/hashicorp/github/latest/docs/resources/team_repository) | ✖️ |
+| [team_membership](https://registry.terraform.io/providers/hashicorp/github/latest/docs/resources/team_membership) | ✔️ |
+| [team_repository](https://registry.terraform.io/providers/hashicorp/github/latest/docs/resources/team_repository) | ✔️ |
 | [team_sync_group_mapping](https://registry.terraform.io/providers/hashicorp/github/latest/docs/resources/team_sync_group_mapping) | ✖️ |
 | [user_gpg_key](https://registry.terraform.io/providers/hashicorp/github/latest/docs/resources/user_gpg_key) | ✖️ |
 | [user_invitation_accepter](https://registry.terraform.io/providers/hashicorp/github/latest/docs/resources/user_invitation_accepter) | ✖️ |
