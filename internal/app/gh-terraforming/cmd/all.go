@@ -24,6 +24,8 @@ var allCmd = &cobra.Command{
 
 		membershipCmd.Run(cmd, args)
 
+		organizationBlockCmd.Run(cmd, args)
+
 		repositoryCmd.Run(cmd, args)
 
 		repositoryCollaboratorCmd.Run(cmd, args)
