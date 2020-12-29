@@ -115,7 +115,7 @@ The following resources can be downloaded into [Terraform HCL format](https://ww
 |----------|----------------|
 | [repository](https://registry.terraform.io/providers/hashicorp/github/latest/docs/resources/repository) | ✔️ |
 | [actions_secret](https://registry.terraform.io/providers/hashicorp/github/latest/docs/resources/actions_secret) | 🚫 |
-| [branch](https://registry.terraform.io/providers/hashicorp/github/latest/docs/resources/branch) | ✖️ |
+| [branch](https://registry.terraform.io/providers/hashicorp/github/latest/docs/resources/branch) | ✔️ |
 | [branch_protection](https://registry.terraform.io/providers/hashicorp/github/latest/docs/resources/branch_protection) | ✖️ |
 | [issue_label](https://registry.terraform.io/providers/hashicorp/github/latest/docs/resources/issue_label) | ✖️ |
 | [membership](https://registry.terraform.io/providers/hashicorp/github/latest/docs/resources/membership) | ✔️ |

@@ -28,6 +28,8 @@ var allCmd = &cobra.Command{
 
 		repositoryCmd.Run(cmd, args)
 
+		repositoryBranchCmd.Run(cmd, args)
+
 		repositoryCollaboratorCmd.Run(cmd, args)
 
 		repositoryWebhookCmd.Run(cmd, args)
