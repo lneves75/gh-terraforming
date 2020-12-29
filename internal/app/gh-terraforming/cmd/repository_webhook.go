@@ -122,7 +122,7 @@ func repositoryWebhookParse(repo *github.Repository, webhook *github.Hook, outpu
 			Active   bool
 			Events   []string
 			// Config
-			Url         string
+			URL         string
 			ContentType string
 			InsecureSSL bool
 			Secret      bool
@@ -132,7 +132,7 @@ func repositoryWebhookParse(repo *github.Repository, webhook *github.Hook, outpu
 			ID:          webhook.GetID(),
 			Active:      webhook.GetActive(),
 			Events:      webhook.Events,
-			Url:         config["url"].(string),
+			URL:         config["url"].(string),
 			ContentType: config["content_type"].(string),
 			InsecureSSL: config["insecure_ssl"].(bool),
 			Secret:      config["secret"].(bool),
