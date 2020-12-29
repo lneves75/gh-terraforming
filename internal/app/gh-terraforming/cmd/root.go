@@ -96,30 +96,33 @@ func initConfig() {
 // This function runs before every root command
 func persistentPreRun(cmd *cobra.Command, args []string) {
 
-	if apiToken = viper.GetString("token"); apiToken == "" {
-		log.Error("-t/--token option or GITHUB_TOKEN env var must be set")
-		return
-	}
+	if cmd.Name() != "version" {
 
-	if orgName = viper.GetString("organization"); orgName == "" {
-		log.Error("-o/--organization option or GITHUB_ORGANIZATION env var must be set")
-		return
-	}
+		if apiToken = viper.GetString("token"); apiToken == "" {
+			log.Error("-t/--token option or GITHUB_TOKEN env var must be set")
+			return
+		}
 
-	log.WithFields(logrus.Fields{
-		"Token":        fmt.Sprintf("*************%s", apiToken[:4]),
-		"Organization": orgName,
-	}).Debug("Initializing go-github")
+		if orgName = viper.GetString("organization"); orgName == "" {
+			log.Error("-o/--organization option or GITHUB_ORGANIZATION env var must be set")
+			return
+		}
 
-	ts := oauth2.StaticTokenSource(
-		&oauth2.Token{AccessToken: apiToken},
-	)
-	tc := oauth2.NewClient(ctx, ts)
+		log.WithFields(logrus.Fields{
+			"Token":        fmt.Sprintf("*************%s", apiToken[:4]),
+			"Organization": orgName,
+		}).Debug("Initializing go-github")
 
-	api = github.NewClient(tc)
+		ts := oauth2.StaticTokenSource(
+			&oauth2.Token{AccessToken: apiToken},
+		)
+		tc := oauth2.NewClient(ctx, ts)
 
-	if outDirectory == "" {
-		outDirectory, _ = os.Getwd()
+		api = github.NewClient(tc)
+
+		if outDirectory == "" {
+			outDirectory, _ = os.Getwd()
+		}
 	}
 }
 
