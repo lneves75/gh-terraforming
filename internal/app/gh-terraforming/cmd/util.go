@@ -41,9 +41,8 @@ func quoteIfString(i interface{}) interface{} {
 	}
 	if reflect.ValueOf(i).Kind() == reflect.String {
 		return fmt.Sprintf("\"%v\"", i)
-	} else {
-		return i
 	}
+	return i
 }
 
 func normalizeResourceName(name string) string {
