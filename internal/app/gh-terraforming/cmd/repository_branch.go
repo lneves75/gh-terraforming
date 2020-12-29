@@ -18,7 +18,7 @@ const repositoryBranchTemplate = `
 # terraform import github_repository_branch.{{normalizeResourceName .Repo}}-{{.Branch}} {{normalizeResourceName .Repo}}:{{.Branch}}
 resource "github_repository_branch" "{{normalizeResourceName .Repo}}-{{.Branch}}" {
 	repository = "{{.Repo}}"
-	branch = "{{.Branch}}"
+	branch     = "{{.Branch}}"
 }
 `
 

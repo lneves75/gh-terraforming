@@ -17,14 +17,14 @@ const teamTemplate = `
 {{- end}}
 # terraform import github_team.{{normalizeResourceName .Team.Name}} {{.Team.ID}}
 resource "github_team" "{{normalizeResourceName .Team.Name}}" {
-  name = "{{.Team.Name}}"
-  {{if .Team.Description}}description = "{{.Team.Description}}" 
+  name           = "{{.Team.Name}}"
+  {{if .Team.Description}}description    = "{{.Team.Description}}"
   {{end -}}
-  {{if .Team.Privacy}}privacy = "{{.Team.Privacy}}" 
+  {{if .Team.Privacy}}privacy        = "{{.Team.Privacy}}"
   {{end -}}
-  {{if .ParentID}}parent_team_id = "{{.ParentID}}" 
+  {{if .ParentID}}parent_team_id = "{{.ParentID}}"
   {{end -}}
-  {{if .Team.LDAPDN}}ldap_dn = "{{.Team.LDAPDN}}" 
+  {{if .Team.LDAPDN}}ldap_dn        = "{{.Team.LDAPDN}}"
   {{end -}}
 }
 `

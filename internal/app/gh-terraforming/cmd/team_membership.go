@@ -17,9 +17,9 @@ const teamMembershipTemplate = `
 {{- end}}
 # terraform import github_team_membership.{{normalizeResourceName .TeamName}}-{{.UserName}} {{.TeamID}}:{{.UserName}}
 resource "github_team_membership" "{{normalizeResourceName .TeamName}}-{{.UserName}}" {
-  team_id = {{.TeamID}}
+  team_id  = {{.TeamID}}
   username = "{{.UserName}}"
-  {{if .Role}}role = "{{.Role}}" 
+  {{if .Role}}role     = "{{.Role}}"
   {{end -}}
 }
 `
